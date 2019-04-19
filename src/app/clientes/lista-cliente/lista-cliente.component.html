@@ -1,0 +1,11 @@
+<button type="button" class="btn btn-primary" [routerLink]="['/clientes/novo']">
+  Novo Cliente
+</button>
+<br /><br />
+<section class="content">
+  <div class="row">
+    <div *ngFor="let cliente of clientes" class="col-lg-4 col-sm-6 col-xs-12">
+      <app-cliente-item [cliente]="cliente"></app-cliente-item>
+    </div>
+  </div>
+</section>

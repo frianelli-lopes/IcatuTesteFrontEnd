@@ -7,6 +7,9 @@ import { PaginaNaoEncontradaComponent } from "./pagina-nao-encontrada/pagina-nao
 import { ClientesComponent } from "./clientes/clientes.component";
 import { ClienteItemComponent } from "./clientes/cliente-item/cliente-item.component";
 import { SobreComponent } from "./sobre/sobre.component";
+import { HttpModule } from "@angular/http";
+import { ListaClienteComponent } from "./clientes/lista-cliente/lista-cliente.component";
+import { ClienteFormComponent } from "./clientes/cliente-form/cliente-form.component";
 
 @NgModule({
   declarations: [
@@ -14,9 +17,11 @@ import { SobreComponent } from "./sobre/sobre.component";
     PaginaNaoEncontradaComponent,
     ClientesComponent,
     ClienteItemComponent,
-    SobreComponent
+    SobreComponent,
+    ListaClienteComponent,
+    ClienteFormComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpModule],
   providers: [],
   bootstrap: [AppComponent]
 })
