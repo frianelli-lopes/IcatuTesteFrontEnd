@@ -10,6 +10,7 @@ import { SobreComponent } from "./sobre/sobre.component";
 import { HttpModule } from "@angular/http";
 import { ListaClienteComponent } from "./clientes/lista-cliente/lista-cliente.component";
 import { ClienteFormComponent } from "./clientes/cliente-form/cliente-form.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ClienteFormComponent } from "./clientes/cliente-form/cliente-form.compo
     ListaClienteComponent,
     ClienteFormComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpModule],
+  imports: [BrowserModule, AppRoutingModule, HttpModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

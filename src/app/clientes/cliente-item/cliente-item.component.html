@@ -1,4 +1,8 @@
-<div class="card margemClienteItem">
+<div
+  class="card clienteItem"
+  (click)="onEditar(cliente.id)"
+  title="Clique para atualizar os dados deste cliente"
+>
   <div class="card-body">
     <h5 class="card-title">{{ cliente.nome }}</h5>
     <p class="card-text">

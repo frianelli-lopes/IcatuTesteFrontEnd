@@ -13,6 +13,9 @@ export class ListaClienteComponent implements OnInit {
   constructor(private clientesService: ClientesService) {}
 
   ngOnInit() {
-    this.clientesService.getClientes().subscribe(x => (this.clientes = x));
+    this.clientesService
+      .listar()
+      .pipe()
+      .subscribe(x => (this.clientes = x));
   }
 }

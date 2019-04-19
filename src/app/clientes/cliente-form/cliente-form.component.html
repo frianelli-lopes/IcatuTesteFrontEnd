@@ -1,3 +1,141 @@
-<p>
-  cliente-form works!
-</p>
+<form
+  class="needs-validation"
+  novalidate
+  [formGroup]="form"
+  style="padding-top: 10px"
+>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          placeholder="Nome"
+          formControlName="nome"
+          [ngClass]="{ 'is-invalid': submitted && hasError('nome') }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('nome') && hasError('nome')['required']"
+        >
+          Campo nome é obrigatório.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('nome') && hasError('nome')['minlength']"
+        >
+          Campo nome precisa ter no mínimo
+          {{ hasError("nome")["minlength"].requiredLength }} caracteres.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('nome') && hasError('nome')['maxlength']"
+        >
+          Campo nome precisa ter no máximo
+          {{ hasError("nome")["maxlength"].requiredLength }} caracteres.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="nome">CPF</label><br />
+        <input
+          type="text"
+          class="form-control"
+          id="cpf"
+          placeholder="Informe CPF somente números"
+          formControlName="cpf"
+          maxlength="11"
+          [ngClass]="{ 'is-invalid': submitted && hasError('cpf') }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('cpf') && hasError('cpf')['required']"
+        >
+          Campo CPF é obrigatório.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('cpf') && hasError('cpf')['minlength']"
+        >
+          Campo CPF precisa ter no mínimo
+          {{ hasError("cpf")["minlength"].requiredLength }} caracteres.
+        </div>
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('cpf') && hasError('cpf')['maxlength']"
+        >
+          Campo CPF precisa ter no máximo
+          {{ hasError("cpf")["maxlength"].requiredLength }} caracteres.
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="nome">Data de Nascimento</label><br />
+        <input
+          id="dataNascimento"
+          type="text"
+          class="form-control"
+          formControlName="dataNascimento"
+          placeholder="Data de nascimento formato dd/mm/aaaa"
+          maxlength="10"
+          [ngClass]="{ 'is-invalid': submitted && hasError('dataNascimento') }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            hasError('dataNascimento') && hasError('dataNascimento')['required']
+          "
+        >
+          Campo Data de Nascimento é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="nome">Sexo</label><br />
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="sexo"
+            id="sexoMasculino"
+            value="M"
+            formControlName="sexo"
+          />
+          <label class="form-check-label" for="sexoMasculino">
+            Masculino
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="sexo"
+            id="sexoFeminino"
+            value="F"
+            formControlName="sexo"
+          />
+          <label class="form-check-label" for="sexoFeminino">
+            Feminino
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 10px">
+    <button type="sumit" class="btn btn-primary" (click)="onSubmit()">
+      Salvar
+    </button>
+    <button type="button" class="btn btn-default" (click)="onCancel()">
+      Cancelar
+    </button>
+  </div>
+</form>
