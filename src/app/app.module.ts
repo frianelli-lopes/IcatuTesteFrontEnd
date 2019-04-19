@@ -1,24 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
-import { ListaEnderecoComponent } from './lista-endereco/lista-endereco.component';
-import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { PaginaNaoEncontradaComponent } from "./pagina-nao-encontrada/pagina-nao-encontrada.component";
+import { ClientesComponent } from "./clientes/clientes.component";
+import { ClienteItemComponent } from "./clientes/cliente-item/cliente-item.component";
+import { SobreComponent } from "./sobre/sobre.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaClienteComponent,
-    ListaEnderecoComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    ClientesComponent,
+    ClienteItemComponent,
+    SobreComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

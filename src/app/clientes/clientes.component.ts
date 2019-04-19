@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { ICliente } from "../models/cliente.model";
 
 @Component({
-  selector: "app-lista-cliente",
-  templateUrl: "./lista-cliente.component.html",
-  styleUrls: ["./lista-cliente.component.css"]
+  selector: "app-clientes",
+  templateUrl: "./clientes.component.html",
+  styleUrls: ["./clientes.component.css"]
 })
-export class ListaClienteComponent implements OnInit {
+export class ClientesComponent implements OnInit {
   clientes: ICliente[] = [
     {
       id: 1,

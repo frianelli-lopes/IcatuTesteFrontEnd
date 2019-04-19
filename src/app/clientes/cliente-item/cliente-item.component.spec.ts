@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListaEnderecoComponent } from './lista-endereco.component';
+import { ClienteItemComponent } from './cliente-item.component';
 
-describe('ListaEnderecoComponent', () => {
-  let component: ListaEnderecoComponent;
-  let fixture: ComponentFixture<ListaEnderecoComponent>;
+describe('ClienteItemComponent', () => {
+  let component: ClienteItemComponent;
+  let fixture: ComponentFixture<ClienteItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListaEnderecoComponent ]
+      declarations: [ ClienteItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListaEnderecoComponent);
+    fixture = TestBed.createComponent(ClienteItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

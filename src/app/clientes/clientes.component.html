@@ -1,0 +1,13 @@
+<section class="content-header">
+  <h1>
+    Clientes
+  </h1>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div *ngFor="let cliente of clientes" class="col-sm-6 col-xs-12">
+      <app-cliente-item [cliente]="cliente"></app-cliente-item>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<div class="card margemClienteItem">
+  <div class="card-body">
+    <h5 class="card-title">{{ cliente.nome }}</h5>
+    <p class="card-text">
+      Sexo: {{ cliente.sexo == "M" ? "Masculino" : "Feminino" }}
+    </p>
+    <a *ngIf="cliente.enderecoCadastrado" class="btn btn-primary"
+      >Visualizar Endereço</a
+    >
+    <a *ngIf="!cliente.enderecoCadastrado" class="btn btn-primary"
+      >Cadastrar Endereço</a
+    >
+  </div>
+</div>
