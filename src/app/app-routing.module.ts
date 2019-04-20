@@ -19,7 +19,7 @@ const routes: Routes = [
     ]
   },
   { path: "sobre", component: SobreComponent },
-  { path: "", redirectTo: "/clientes", pathMatch: "full" },
+  { path: "", redirectTo: "/clientes/lista", pathMatch: "full" },
   { path: "**", component: PaginaNaoEncontradaComponent }
 ];
 

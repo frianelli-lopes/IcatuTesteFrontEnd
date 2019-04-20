@@ -4,7 +4,7 @@
       <div class="col-9">
         <h5 class="card-title">{{ cliente.nome }}</h5>
       </div>
-      <div class="col-1" style="text-align: right">
+      <div class="col-1">
         <i
           class="fa fa-edit"
           style="color: blue"
@@ -12,7 +12,7 @@
           title="Clique para atualizar os dados deste cliente"
         ></i>
       </div>
-      <div class="col-1" style="text-align: right">
+      <div class="col-1">
         <i
           class="fa fa-trash"
           style="color: red"
@@ -21,9 +21,10 @@
         ></i>
       </div>
     </div>
-    <p class="card-text">
+    <div class="float-left">
       Sexo: {{ cliente.sexo == "M" ? "Masculino" : "Feminino" }}
-    </p>
+    </div>
+    <div class="float-right">Idade: {{ calcularIdade() }} anos</div>
     <a *ngIf="cliente.enderecoCadastrado" class="btn btn-primary"
       >Visualizar Endereço</a
     >

@@ -13,6 +13,8 @@ export class ClienteItemComponent implements OnInit {
 
   @Output() excluir = new EventEmitter();
 
+  hoje = new Date();
+
   constructor(private router: Router) {}
 
   ngOnInit() {}
@@ -23,5 +25,24 @@ export class ClienteItemComponent implements OnInit {
 
   onExcluir(id: number) {
     this.excluir.emit(id);
+  }
+
+  calcularIdade() {
+    if (this.cliente && this.cliente.dataNascimento != "") {
+      let data = this.cliente.dataNascimento.split("/");
+      let dia = parseInt(data[0], 10);
+      let mes = parseInt(data[1], 10) - 1;
+      let ano = parseInt(data[2], 10);
+      let idade = this.hoje.getFullYear() - ano;
+
+      if (this.hoje.getMonth() < mes) return idade - 1;
+
+      if (this.hoje.getMonth() == mes && this.hoje.getDate() < dia)
+        return idade - 1;
+
+      return idade;
+    }
+
+    return null;
   }
 }

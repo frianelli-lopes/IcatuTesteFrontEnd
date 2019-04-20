@@ -1,4 +1,7 @@
 .clienteItem {
   margin-bottom: 10px;
+}
+
+.fa {
   cursor: pointer;
 }
