@@ -28,8 +28,8 @@ export class ClienteItemComponent implements OnInit {
   }
 
   calcularIdade() {
-    if (this.cliente && this.cliente.dataNascimento != "") {
-      let data = this.cliente.dataNascimento.split("/");
+    if (this.cliente && this.cliente.birthday != "") {
+      let data = this.cliente.birthday.split("/");
       let dia = parseInt(data[0], 10);
       let mes = parseInt(data[1], 10) - 1;
       let ano = parseInt(data[2], 10);

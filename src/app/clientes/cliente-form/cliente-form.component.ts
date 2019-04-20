@@ -18,7 +18,7 @@ import { ICliente } from "../../models/cliente.model";
 export class ClienteFormComponent implements OnInit {
   form: FormGroup;
   submitted = false;
-  cliente: ICliente = { nome: "", sexo: "M", dataNascimento: "" };
+  cliente: ICliente = { name: "", gender: "M", birthday: "" };
 
   constructor(
     private fb: FormBuilder,
@@ -43,25 +43,25 @@ export class ClienteFormComponent implements OnInit {
 
     this.form = this.fb.group({
       id: [this.cliente.id],
-      nome: [
-        this.cliente.nome,
+      name: [
+        this.cliente.name,
         [
           Validators.required,
           Validators.minLength(3),
           Validators.maxLength(100)
         ]
       ],
-      sexo: [this.cliente.sexo],
-      cpf: [
-        this.cliente.cpf,
+      gender: [this.cliente.gender],
+      document: [
+        this.cliente.document,
         [
           Validators.required,
           Validators.minLength(11),
           Validators.maxLength(11)
         ]
       ],
-      dataNascimento: [
-        this.cliente.dataNascimento,
+      birthday: [
+        this.cliente.birthday,
         [Validators.required, Validators.pattern(DATE_REGEX)]
       ]
     });

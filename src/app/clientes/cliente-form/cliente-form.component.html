@@ -7,34 +7,34 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <label for="nome">Nome</label>
+        <label for="name">Nome</label>
         <input
           type="text"
           class="form-control"
-          id="nome"
+          id="name"
           placeholder="Nome"
-          formControlName="nome"
-          [ngClass]="{ 'is-invalid': submitted && hasError('nome') }"
+          formControlName="name"
+          [ngClass]="{ 'is-invalid': submitted && hasError('name') }"
         />
         <div
           class="invalid-feedback"
-          *ngIf="hasError('nome') && hasError('nome')['required']"
+          *ngIf="hasError('name') && hasError('name')['required']"
         >
           Campo nome é obrigatório.
         </div>
         <div
           class="invalid-feedback"
-          *ngIf="hasError('nome') && hasError('nome')['minlength']"
+          *ngIf="hasError('name') && hasError('name')['minlength']"
         >
           Campo nome precisa ter no mínimo
-          {{ hasError("nome")["minlength"].requiredLength }} caracteres.
+          {{ hasError("name")["minlength"].requiredLength }} caracteres.
         </div>
         <div
           class="invalid-feedback"
-          *ngIf="hasError('nome') && hasError('nome')['maxlength']"
+          *ngIf="hasError('name') && hasError('name')['maxlength']"
         >
           Campo nome precisa ter no máximo
-          {{ hasError("nome")["maxlength"].requiredLength }} caracteres.
+          {{ hasError("name")["maxlength"].requiredLength }} caracteres.
         </div>
       </div>
     </div>
@@ -43,55 +43,53 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="nome">CPF</label><br />
+        <label for="document">CPF</label><br />
         <input
           type="text"
           class="form-control"
-          id="cpf"
+          id="document"
           placeholder="Informe CPF somente números"
-          formControlName="cpf"
+          formControlName="document"
           maxlength="11"
-          [ngClass]="{ 'is-invalid': submitted && hasError('cpf') }"
+          [ngClass]="{ 'is-invalid': submitted && hasError('document') }"
         />
         <div
           class="invalid-feedback"
-          *ngIf="hasError('cpf') && hasError('cpf')['required']"
+          *ngIf="hasError('document') && hasError('document')['required']"
         >
           Campo CPF é obrigatório.
         </div>
         <div
           class="invalid-feedback"
-          *ngIf="hasError('cpf') && hasError('cpf')['minlength']"
+          *ngIf="hasError('document') && hasError('document')['minlength']"
         >
           Campo CPF precisa ter no mínimo
-          {{ hasError("cpf")["minlength"].requiredLength }} caracteres.
+          {{ hasError("document")["minlength"].requiredLength }} caracteres.
         </div>
         <div
           class="invalid-feedback"
-          *ngIf="hasError('cpf') && hasError('cpf')['maxlength']"
+          *ngIf="hasError('document') && hasError('document')['maxlength']"
         >
           Campo CPF precisa ter no máximo
-          {{ hasError("cpf")["maxlength"].requiredLength }} caracteres.
+          {{ hasError("document")["maxlength"].requiredLength }} caracteres.
         </div>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="nome">Data de Nascimento</label><br />
+        <label for="birthday">Data de Nascimento</label><br />
         <input
-          id="dataNascimento"
+          id="birthday"
           type="text"
           class="form-control"
-          formControlName="dataNascimento"
+          formControlName="birthday"
           placeholder="Data de nascimento formato dd/mm/aaaa"
           maxlength="10"
-          [ngClass]="{ 'is-invalid': submitted && hasError('dataNascimento') }"
+          [ngClass]="{ 'is-invalid': submitted && hasError('birthday') }"
         />
         <div
           class="invalid-feedback"
-          *ngIf="
-            hasError('dataNascimento') && hasError('dataNascimento')['required']
-          "
+          *ngIf="hasError('birthday') && hasError('birthday')['required']"
         >
           Campo Data de Nascimento é obrigatório.
         </div>
@@ -99,15 +97,15 @@
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="nome">Sexo</label><br />
+        <label for="gender">Sexo</label><br />
         <div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
-            name="sexo"
+            name="gender"
             id="sexoMasculino"
             value="M"
-            formControlName="sexo"
+            formControlName="gender"
           />
           <label class="form-check-label" for="sexoMasculino">
             Masculino
@@ -117,10 +115,10 @@
           <input
             class="form-check-input"
             type="radio"
-            name="sexo"
+            name="gender"
             id="sexoFeminino"
             value="F"
-            formControlName="sexo"
+            formControlName="gender"
           />
           <label class="form-check-label" for="sexoFeminino">
             Feminino

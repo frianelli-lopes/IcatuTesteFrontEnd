@@ -1,8 +1,8 @@
 export interface ICliente {
   id?: number;
-  nome: string;
-  sexo: string;
-  cpf?: string;
-  dataNascimento: string;
+  name: string;
+  gender: string;
+  document?: string;
+  birthday: string;
   enderecoCadastrado?: boolean;
 }

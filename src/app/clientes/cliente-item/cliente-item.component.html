@@ -2,7 +2,7 @@
   <div class="card-body">
     <div class="row justify-content-between">
       <div class="col-9">
-        <h5 class="card-title">{{ cliente.nome }}</h5>
+        <h5 class="card-title">{{ cliente.name }}</h5>
       </div>
       <div class="col-1">
         <i
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="float-left">
-      Sexo: {{ cliente.sexo == "M" ? "Masculino" : "Feminino" }}
+      Sexo: {{ cliente.gender == "M" ? "Masculino" : "Feminino" }}
     </div>
     <div class="float-right">Idade: {{ calcularIdade() }} anos</div>
     <a *ngIf="cliente.enderecoCadastrado" class="btn btn-primary"
