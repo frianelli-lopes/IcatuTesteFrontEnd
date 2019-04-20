@@ -1,10 +1,26 @@
-<div
-  class="card clienteItem"
-  (click)="onEditar(cliente.id)"
-  title="Clique para atualizar os dados deste cliente"
->
+<div class="card clienteItem">
   <div class="card-body">
-    <h5 class="card-title">{{ cliente.nome }}</h5>
+    <div class="row justify-content-between">
+      <div class="col-9">
+        <h5 class="card-title">{{ cliente.nome }}</h5>
+      </div>
+      <div class="col-1" style="text-align: right">
+        <i
+          class="fa fa-edit"
+          style="color: blue"
+          (click)="onEditar(cliente.id)"
+          title="Clique para atualizar os dados deste cliente"
+        ></i>
+      </div>
+      <div class="col-1" style="text-align: right">
+        <i
+          class="fa fa-trash"
+          style="color: red"
+          (click)="onExcluir(cliente.id)"
+          title="Clique para excluir este cliente"
+        ></i>
+      </div>
+    </div>
     <p class="card-text">
       Sexo: {{ cliente.sexo == "M" ? "Masculino" : "Feminino" }}
     </p>

@@ -5,7 +5,10 @@
 <section class="content">
   <div class="row">
     <div *ngFor="let cliente of clientes" class="col-lg-4 col-sm-6 col-xs-12">
-      <app-cliente-item [cliente]="cliente"></app-cliente-item>
+      <app-cliente-item
+        [cliente]="cliente"
+        (excluir)="onExcluir($event)"
+      ></app-cliente-item>
     </div>
   </div>
 </section>

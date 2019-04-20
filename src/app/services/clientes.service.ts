@@ -40,4 +40,8 @@ export class ClientesService {
       .put(`${this._API}/clientes/${cliente.id}`, cliente)
       .pipe(take(1));
   }
+
+  excluir(id: number) {
+    return this.http.delete(`${this._API}/clientes/${id}`).pipe(take(1));
+  }
 }
