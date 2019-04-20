@@ -1,0 +1,52 @@
+<form
+  class="needs-validation"
+  novalidate
+  [formGroup]="form"
+  style="padding-top: 10px"
+>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="nome">Usuário</label>
+        <input
+          type="text"
+          class="form-control"
+          id="usuario"
+          formControlName="usuario"
+          [ngClass]="{ 'is-invalid': submitted && hasError('usuario') }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('usuario') && hasError('usuario')['required']"
+        >
+          Campo Usuário é obrigatório.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="nome">Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="senha"
+          formControlName="senha"
+          [ngClass]="{ 'is-invalid': submitted && hasError('senha') }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="hasError('senha') && hasError('senha')['required']"
+        >
+          Campo Senha é obrigatório.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 10px">
+    <button type="sumit" class="btn btn-primary" (click)="onSubmit()">
+      Log In
+    </button>
+  </div>
+</form>

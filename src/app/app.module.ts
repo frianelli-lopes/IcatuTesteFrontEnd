@@ -11,6 +11,8 @@ import { HttpModule } from "@angular/http";
 import { ListaClienteComponent } from "./clientes/lista-cliente/lista-cliente.component";
 import { ClienteFormComponent } from "./clientes/cliente-form/cliente-form.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { LoginComponent } from "./login/login/login.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,9 +22,16 @@ import { ReactiveFormsModule } from "@angular/forms";
     ClienteItemComponent,
     SobreComponent,
     ListaClienteComponent,
-    ClienteFormComponent
+    ClienteFormComponent,
+    LoginComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

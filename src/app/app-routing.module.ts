@@ -6,11 +6,15 @@ import { ClientesComponent } from "./clientes/clientes.component";
 import { SobreComponent } from "./sobre/sobre.component";
 import { ListaClienteComponent } from "./clientes/lista-cliente/lista-cliente.component";
 import { ClienteFormComponent } from "./clientes/cliente-form/cliente-form.component";
+import { AuthGuard } from "./guards/auth.guard";
+import { LoginComponent } from "./login/login/login.component";
 
 const routes: Routes = [
+  { path: "login", component: LoginComponent },
   {
     path: "clientes",
     component: ClientesComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: "", redirectTo: "lista", pathMatch: "full" },
       { path: "lista", component: ListaClienteComponent },
@@ -18,8 +22,8 @@ const routes: Routes = [
       { path: "editar/:id", component: ClienteFormComponent }
     ]
   },
-  { path: "sobre", component: SobreComponent },
-  { path: "", redirectTo: "/clientes/lista", pathMatch: "full" },
+  { path: "sobre", component: SobreComponent, canActivate: [AuthGuard] },
+  { path: "", redirectTo: "/login", pathMatch: "full" },
   { path: "**", component: PaginaNaoEncontradaComponent }
 ];
 

@@ -81,8 +81,6 @@ export class ClienteFormComponent implements OnInit {
     if (this.form.valid) {
       var cliente: ICliente = { ...this.form.value };
 
-      console.log("cliente: " + cliente);
-
       if (this.form.value.id) {
         this.clienteService
           .alterar(cliente)
@@ -97,13 +95,6 @@ export class ClienteFormComponent implements OnInit {
             success => this.location.back(),
             error => console.error(error)
           );
-      }
-
-      let msgSuccess = "Curso criado com sucesso!";
-      let msgError = "Erro ao criar curso, tente novamente!";
-      if (this.form.value.id) {
-        msgSuccess = "Curso atualizado com sucesso!";
-        msgError = "Erro ao atualizar curso, tente novamente!";
       }
     }
   }

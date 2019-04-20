@@ -21,7 +21,14 @@ export class ListaClienteComponent implements OnInit {
     this.clientesService
       .listar()
       .pipe()
-      .subscribe(x => (this.clientes = x));
+      .subscribe(
+        x => {
+          this.clientes = x;
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   onExcluir(evento) {
